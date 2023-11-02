@@ -1,0 +1,177 @@
+@keyframes mylogo{
+    0% {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+
+}
+
+#logo {
+    position: relative;
+    animation-name: mylogo;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; 
+}
+
+
+body {
+    font-family: 'Poppins','serif'; 
+    background-image: url("../images/concrete_seamless.png"); 
+}
+
+
+header{
+    display: flex;
+    Flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+.nav_item a:hover, a:focus, a:active, a:visited{
+    text-decoration: underline;
+    color: blue;
+}
+
+.card> header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px;
+    border-radius:50px 50px 0px 0px;
+}
+
+.card{
+    border-radius:50px 50px 0px 0px;
+    flex-basis: 450px;
+    
+}
+
+.pricing{
+    display: flex;
+    Flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+
+
+}
+
+
+.gallery{
+    display: flex;
+    Flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+
+@media screen and (min-width: 900px){
+
+    
+    body>header{
+        display: flex;
+        Flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+    }
+
+    .nav_links{
+        display: flex;
+        Flex-direction: row;
+
+    }
+
+    .card{
+        flex-basis: 275px;   
+        z-index: -1; 
+      
+    }
+    .pricing{
+        z-index: -2; 
+    }
+
+
+
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+      animation: none;
+    }
+}
+
+
+@media print {
+    .gallery , #gallery{
+        display: none;
+    }
+
+
+
+    .card ul li:nth-child(2)::after {
+        content: " 👍";
+    }
+
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+      }
+    
+    * {
+        print-color-adjust: exact;
+        
+    }
+
+    body {
+        font-family: 'Arial','Helvetica'; 
+        background-color: grey;
+    }
+
+    header nav{
+        width: 100%;
+    }
+
+
+    .nav_links{        
+        display: flex;
+        width: 100%;
+        Flex-direction: row;
+        justify-content: space-around; 
+
+    }
+
+    .nav_item {
+        flex: 1;
+        text-align: center;
+    }
+
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+        
+    }
+
+    .pricing .card ul li header h4 {
+        text-align: left;
+
+    }
+
+
+
+}
